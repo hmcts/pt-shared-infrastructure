@@ -11,3 +11,7 @@ variable "product_group_name" {
 variable "common_tags" {
   type = map(string)
 }
+
+variable "location" {
+  default = "UK South"
+}
