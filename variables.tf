@@ -5,7 +5,7 @@ variable "env" {}
 variable "jenkins_AAD_objectId" {}
 
 variable "product_group_name" {
-  default = "DTS Residential Property Tribunal"
+  default = "DTS Property Tribunal"
 }
 
 variable "common_tags" {
