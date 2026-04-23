@@ -1,4 +1,4 @@
-module "key_vault" {
+module "key-vault" {
   source                  = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
   product                 = var.product
   env                     = var.env
@@ -10,5 +10,5 @@ module "key_vault" {
 }
 
 output "vaultName" {
-  value = module.key_vault.key_vault_name
+  value = module.key-vault.key_vault_name
 }
