@@ -10,5 +10,5 @@ module "key-vault" {
 }
 
 output "vaultName" {
-  value = module.key_vault.key_vault_name
+  value = module.key-vault.key_vault_name
 }
