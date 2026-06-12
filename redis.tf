@@ -1,5 +1,4 @@
-module "managed_redis" {
-  for_each = toset([var.env])
+module "pt_managed_redis" {
   source   = "git@github.com:hmcts/terraform-module-azure-managed-redis?ref=main"
 
   product     = var.product
