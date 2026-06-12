@@ -17,9 +17,8 @@ variable "location" {
   default = "UK South"
 }
 
-variable "component" {
-  default = ""
-}
+# variable "component" {
+# }
 
 
 variable "private_dns_subscription_id" {
