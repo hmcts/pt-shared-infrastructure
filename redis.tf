@@ -1,5 +1,5 @@
 module "pt_managed_redis" {
-  source   = "git@github.com:hmcts/terraform-module-azure-managed-redis?ref=main"
+  source = "git@github.com:hmcts/terraform-module-azure-managed-redis?ref=main"
 
   product     = var.product
   component   = var.component
