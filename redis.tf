@@ -20,6 +20,12 @@ module "pt_managed_redis" {
 
 resource "azurerm_key_vault_secret" "redis_connection_string" {
   name         = "redis-connection-string"
-  value        = "redis://ignore:${urlencode(module.managed_redis.primary_access_key)}@${module.managed_redis.hostname}:${module.managed_redis.port}?tls=true"
+  value        = "redis://ignore:${urlencode(module.pt_managed_redis.primary_access_key)}@${module.pt_managed_redis.hostname}:${module.managed_redis.port}?tls=true"
   key_vault_id = module.key-vault.key_vault_id
+}
+
+data "azurerm_subnet" "redis_private_endpoint" {
+  name                 = "core-infra-subnet-2-${var.env}"
+  resource_group_name  = "core-infra-${var.env}"
+  virtual_network_name = "core-infra-vnet-${var.env}"
 }
