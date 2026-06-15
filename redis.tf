@@ -2,7 +2,7 @@ module "pt_managed_redis" {
   source = "git@github.com:hmcts/terraform-module-azure-managed-redis?ref=main"
 
   product             = var.product
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = "${var.product}-${var.env}"
   component           = "redis"
   env                 = var.env
   location            = var.location
