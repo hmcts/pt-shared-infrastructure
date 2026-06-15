@@ -1,12 +1,12 @@
 module "pt_managed_redis" {
   source = "git@github.com:hmcts/terraform-module-azure-managed-redis?ref=main"
 
-  product             = var.product
-  resource_group_name = "${var.product}-${var.env}"
-  component           = "redis"
-  env                 = var.env
-  location            = var.location
-  common_tags         = var.common_tags
+  product                      = var.product
+  existing_resource_group_name = "${var.product}-${var.env}"
+  component                    = "redis"
+  env                          = var.env
+  location                     = var.location
+  common_tags                  = var.common_tags
 
   public_network_access   = "Disabled"
   create_private_endpoint = true
