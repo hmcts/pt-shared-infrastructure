@@ -7,7 +7,7 @@ module "pt_managed_redis" {
   env                          = var.env
   location                     = var.location
   common_tags                  = var.common_tags
-  sku_name                     = "Balanced_B0"
+  sku_name                     = "Balanced_B1"
   public_network_access        = "Disabled"
   create_private_endpoint      = true
   subnet_id                    = data.azurerm_subnet.redis_private_endpoint.id
