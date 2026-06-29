@@ -14,6 +14,16 @@ output "vaultName" {
   value = module.key-vault.key_vault_name
 }
 
+resource "random_string" "session-secret" {
+  length = 16
+}
+
+resource "azurerm_key_vault_secret" "pt-session-secret" {
+  name         = "pt-session-secret"
+  value        = random_string.session-secret.result
+  key_vault_id = module.key-vault.key_vault_id
+}
+
 data "azurerm_key_vault" "s2s_vault" {
   name                = "s2s-${var.env}"
   resource_group_name = "rpe-service-auth-provider-${var.env}"
