@@ -1,5 +1,5 @@
 module "key-vault" {
-  source                  = "git@github.com:hmcts/cnp-module-key-vault?ref=master"
+  source                  = "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access-2"
   product                 = var.product
   env                     = var.env
   name                    = "${var.product}-kv-${var.env}"
