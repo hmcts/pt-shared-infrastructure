@@ -2,5 +2,5 @@
 
 Contains the product infrastructure components per Environment for Residential Property Tribunal
 
-Resource Group
+Resource Group.
 Azure Key Vault
