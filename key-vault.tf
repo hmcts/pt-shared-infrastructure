@@ -1,8 +1,15 @@
+locals {
+  key_vault_name_overrides = {
+    demo = "pt-demo-kv"
+  }
+  key_vault_name = lookup(local.key_vault_name_overrides, var.env, "${var.product}-${var.env}")
+}
+
 module "key-vault" {
   source                       = "git@github.com:hmcts/cnp-module-key-vault?ref=DTSPO-31965/remove-jenkins-ptl-access"
   product                      = var.product
   env                          = var.env
-  name                         = "${var.product}-kv-${var.env}"
+  name                         = local.key_vault_name
   object_id                    = var.jenkins_AAD_objectId
   resource_group_name          = azurerm_resource_group.rg.name
   product_group_name           = var.product_group_name
