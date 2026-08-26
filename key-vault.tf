@@ -17,7 +17,7 @@ output "vaultName" {
 }
 
 resource "random_string" "session-secret" {
-  length = 16
+  length = 32
 }
 
 resource "azurerm_key_vault_secret" "pt-session-secret" {
