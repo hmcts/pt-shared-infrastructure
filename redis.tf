@@ -16,6 +16,7 @@ module "pt_managed_redis" {
   ]
 
   access_keys_authentication_enabled = true
+  clustering_policy                  = "EnterpriseCluster"
   persistence_rdb_backup_frequency   = "6h"
 }
 
